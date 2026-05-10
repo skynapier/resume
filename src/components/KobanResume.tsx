@@ -180,12 +180,15 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
         <div>
           <a href="/resume/bydh" style={{
             border: `1px solid ${RED}`, textDecoration: "none",
-            background: "repeating-linear-gradient(135deg, #fbf1ee, #fbf1ee 6px, #fafaf7 6px, #fafaf7 12px)",
+            background: "#fafaf7",
             height: 110,
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontFamily: "ui-monospace, monospace", fontSize: 10, color: RED,
+            display: "block", overflow: "hidden",
           }}>
-            ▢ &nbsp; bydh-erp · screenshot
+            <img
+              src={`${import.meta.env.BASE_URL}BYDH/Order-1.png`}
+              alt="BYDH ERP order management screen"
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top left", display: "block" }}
+            />
           </a>
           <div style={{ ...S.mono, fontSize: 9, color: "var(--ink-muted)", marginTop: 6 }}>
             stack: react · ts · .net · aws (cloudfront, rds, lambda) · postgres
