@@ -6,7 +6,6 @@ export function ResumePage() {
     <>
       <div className="toolbar">
         <button onClick={() => window.print()}>print / save pdf</button>
-        <a href="/resume/Resume.html">explore directions</a>
       </div>
       <main className="stage">
         <KobanResume page={1} />
