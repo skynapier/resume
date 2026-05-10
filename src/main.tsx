@@ -5,6 +5,12 @@ import "../assets/tokens.css";
 import "./styles.css";
 import App from "./App";
 
+const configuredBase = import.meta.env.BASE_URL.replace(/\/$/, "");
+const routerBase =
+  configuredBase && window.location.pathname.startsWith(`${configuredBase}/`)
+    ? configuredBase
+    : "/";
+
 const redirectPath = sessionStorage.getItem("resume.redirect");
 if (redirectPath) {
   sessionStorage.removeItem("resume.redirect");
@@ -13,7 +19,7 @@ if (redirectPath) {
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter basename="/resume">
+    <BrowserRouter basename={routerBase}>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
