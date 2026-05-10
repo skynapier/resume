@@ -11,10 +11,6 @@ Vite + React résumé in the **Kōban** style (sans + mono, hanko red accent, co
 | `index.html` | Vite app shell. |
 | `src/components/KobanResume.tsx` | The actual résumé component. **This is the source of truth.** |
 | `src/pages/BydhPage.tsx` | BYDH case-study route. |
-| `public/Resume.html` | Deployed copy of the old design exploration canvas. |
-| `variations/03-koban.jsx` | Historical source copy kept for reference. |
-| `standalone.html` | Self-contained single-file build (React + fonts inlined). Works fully offline; use this as an email attachment. |
-| `Resume.html` | Original 5-direction design exploration (canvas with all variations side-by-side). Kept for reference. |
 | `resume-content.md` | Plain-text mirror of the résumé content. Useful for pasting into Word, LinkedIn, or job-board forms. |
 | `DESIGN.md` | **Read this before editing.** Design tokens, layout rules, content invariants, "do not change" list. |
 | `assets/` | `tokens.css` and shared SVG dividers/icons. |
@@ -85,7 +81,7 @@ After Option A is working:
 - Vite `base` is `/resume/`.
 - React Router `basename` is `/resume`.
 - `public/404.html` preserves clean routes on refresh.
-- Fonts (Inter, JetBrains Mono, Noto Serif JP) are loaded from Google Fonts CDN. If you need fully offline-resilient deploy, use `standalone.html`.
+- Fonts (Inter, JetBrains Mono, Noto Serif JP) are loaded from Google Fonts CDN.
 - No env vars, no secrets, no API calls.
 
 ---
@@ -100,7 +96,6 @@ After Option A is working:
 - **No prompt injection / hidden text for AI readers.** Removed; do not re-add.
 - Edit `src/components/KobanResume.tsx` for the résumé.
 - Edit `src/pages/BydhPage.tsx` for the BYDH case study.
-- After editing, regenerate `standalone.html` if you want to ship a fresh offline copy.
 
 ### Adding a new bullet
 

@@ -93,10 +93,8 @@ Removed: Rust (no longer used).
 ```
 resume/
 ├── DESIGN.md                    # this file
-├── Resume.html                  # exploration canvas (5 directions, kept for reference)
 ├── index.html                   # Vite shell
 ├── public/404.html              # GitHub Pages clean-route fallback
-├── standalone.html              # fully inlined fallback (TODO)
 ├── resume-content.md            # plain-text mirror for Word workflows
 ├── src/
 │   ├── main.tsx                 # Vite entry
@@ -106,12 +104,10 @@ resume/
 │   └── pages/
 │       ├── ResumePage.tsx
 │       └── BydhPage.tsx
-├── assets/
+└── assets/
 │   ├── tokens.css
 │   ├── icons.svg.html
 │   └── bydh/                    # screenshots go here (TODO)
-└── variations/                  # source of truth for components
-    └── 03-koban.jsx             # the chosen direction
 ```
 
 ## Vite migration checklist
@@ -121,7 +117,6 @@ resume/
 - [x] Import `assets/tokens.css` in `src/main.tsx`
 - [x] Add `/bydh` route
 - [x] Configure GH Pages: `vite.config.ts` `base: '/resume/'`, GH Action on push to `main`
-- [ ] Keep `standalone.html` as a CI artifact
 
 ---
 Last updated: 2026-05-06
