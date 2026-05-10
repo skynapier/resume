@@ -12,7 +12,7 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
   const RED = "oklch(0.55 0.16 25)";
   const S = {
     page: {
-      fontFamily: '"Inter", "Helvetica Neue", sans-serif',
+      fontFamily: 'Georgia, "Times New Roman", serif',
       padding: "36px 56px 56px",
       color: "var(--ink)",
       fontSize: "11.5px",
