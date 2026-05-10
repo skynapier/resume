@@ -1,6 +1,6 @@
 # James Bai · Résumé
 
-Vite + React résumé in the **Kōban** style (sans + mono, hanko red accent, code-document feel). Designed to print cleanly to A4 PDF and deploy to GitHub Pages.
+Vite + React résumé in the **Kōban** style (sans + mono, hanko red accent, code-document feel). Designed as a 2-page desktop A4 PDF plus a separate mobile reading view.
 
 ---
 
@@ -9,7 +9,8 @@ Vite + React résumé in the **Kōban** style (sans + mono, hanko red accent, co
 | File | Purpose |
 |---|---|
 | `index.html` | Vite app shell. |
-| `src/components/KobanResume.tsx` | The actual résumé component. **This is the source of truth.** |
+| `src/components/KobanResume.tsx` | Desktop / print résumé component. |
+| `src/components/MobileResume.tsx` | Mobile reading component. |
 | `src/pages/BydhPage.tsx` | BYDH case-study route. |
 | `resume-content.md` | Plain-text mirror of the résumé content. Useful for pasting into Word, LinkedIn, or job-board forms. |
 | `DESIGN.md` | **Read this before editing.** Design tokens, layout rules, content invariants, "do not change" list. |
@@ -48,7 +49,9 @@ Open `http://127.0.0.1:4173/resume/`.
 
 Open `index.html` in Chrome/Edge → Cmd+P (Mac) / Ctrl+P (Win) → **Save as PDF**.
 
-The page is set up with `@page A4 margin: 0` so the PDF lands as 2 clean A4 pages with no browser headers/footers. The on-screen "print / save pdf" button in the top-right does the same thing.
+The page is set up with `@page A4 margin: 0` so the PDF lands as 2 clean A4 pages with no browser headers/footers. The desktop "print / save pdf" button in the top-right does the same thing.
+
+Mobile shows a separate reading view. Its "download pdf" action downloads `public/James-Bai-CV.pdf`, the desktop A4 version.
 
 If your PDF has odd margins, make sure **Margins: None** and **Background graphics: ON** in the print dialog.
 
@@ -92,9 +95,10 @@ After Option A is working:
 
 - Title is **"Engineer"**, never "Senior Engineer" or "Lead". Honest level today, hunting Senior.
 - Role at Xero is **"Feature lead"**, never "Tech lead" or "Team lead".
-- **No em-dashes (`—`).** Use `:`, `,`, `.`, or `·`. ATS-safer and a personal preference.
+- **No em-dashes.** Use `:`, `,`, `.`, or `·`. ATS-safer and a personal preference.
 - **No prompt injection / hidden text for AI readers.** Removed; do not re-add.
-- Edit `src/components/KobanResume.tsx` for the résumé.
+- Edit `src/components/KobanResume.tsx` for the desktop / print résumé.
+- Edit `src/components/MobileResume.tsx` for the mobile reading résumé.
 - Edit `src/pages/BydhPage.tsx` for the BYDH case study.
 
 ### Adding a new bullet

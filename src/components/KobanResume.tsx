@@ -1,4 +1,4 @@
-/* ==========================================================
+﻿/* ==========================================================
    Variation 03 — KŌBAN (交番) · revised
    Sans + Mono mixed, hanko red accent, code-document feel
    Title: Engineer (real) · Objective: Senior IC, AU
@@ -51,9 +51,9 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
               <div style={{ fontSize: 7, lineHeight: 1, marginTop: 2, letterSpacing: 1 }}>2026</div>
             </div>
             <div style={{ ...S.mono, fontSize: 10.5, color: "var(--ink-soft)", textAlign: "right", lineHeight: 1.6 }}>
-              jamesbaiwlg@gmail.com<br />
-              +64 27 202 5777<br />
-              github.com/skynapier<br />
+              <a href="mailto:jamesbaiwlg@gmail.com" style={{ textDecoration: "none" }}>jamesbaiwlg@gmail.com</a><br />
+              <a href="tel:+64272025777" style={{ textDecoration: "none" }}>+64 27 202 5777</a><br />
+              <a href="https://skynapier.github.io/resume/" style={{ textDecoration: "none" }}>skynapier.github.io/resume</a><br />
               Wellington · NZ
             </div>
           </div>
@@ -88,7 +88,7 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
               <h2 style={S.h2}>Xero <span style={{ fontWeight: 400, color: "var(--ink-muted)" }}>· Engineer</span></h2>
               <div style={{ ...S.mono, fontSize: 11, color: "var(--ink-muted)" }}>2023.11 — present</div>
             </div>
-            <div style={{ ...S.mono, marginTop: 4, fontSize: 11, color: "var(--ink-soft)" }}>stack: <b style={{color:"var(--ink)"}}>C# / .NET 6+ · AWS · React / TypeScript · Postgres · Kafka</b></div>
+            <div style={{ ...S.mono, marginTop: 4, fontSize: 11, color: "var(--ink-soft)" }}>stack: <b style={{color:"var(--ink)"}}>C# / .NET 8/10 · AWS Lambda · SQS · SNS · DynamoDB · AWS Glue · React / TypeScript · Postgres</b></div>
 
             <div style={{ marginTop: 10, fontSize: 11.5, lineHeight: 1.6 }}>
               <div style={{ display: "flex", gap: 12, marginBottom: 6 }}>
@@ -217,10 +217,10 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
           <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>web</span> React · Redux · Next · MUI · Fluent · Next UI</div>
           <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>mobile</span> React Native · Expo</div>
           <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>data</span> Postgres · MySQL · DynamoDB · Dapper · EF · Flyway</div>
-          <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>msg</span> SNS · SQS · Kafka</div>
+          <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>msg</span> SQS · SNS</div>
         </div>
         <div>
-          <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>cloud</span> AWS (ECS, S3, RDS, Lambda, Glue, <b>Cognito</b>, <b>DynamoDB</b>, CloudFront) · Azure</div>
+          <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>cloud</span> AWS (Lambda, SQS, SNS, DynamoDB, Glue, ECS, S3, RDS, <b>Cognito</b>, CloudFront) · Azure</div>
           <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>platform</span> K8s · Docker · Terraform · CloudFormation</div>
           <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>ci/cd</span> GitHub Actions · TeamCity · Jenkins</div>
           <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>ai</span> Claude Code · Codex · Gemini · MCP (author + user)</div>

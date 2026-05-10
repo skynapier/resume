@@ -1,5 +1,5 @@
 /* ============================================================
-   Resume — Shared design tokens
+   Resume - Shared design tokens
    Japanese-restraint base. 5 variations override locally.
    ============================================================ */
 
@@ -70,7 +70,7 @@
 
 /* Bullet that isn't a bullet */
 .r-tick::before {
-  content: "—";
+  content: "-";
   color: var(--ink-faint);
   margin-right: 0.6em;
 }
