@@ -1,0 +1,108 @@
+/* ============================================================
+   Resume — Shared design tokens
+   Japanese-restraint base. 5 variations override locally.
+   ============================================================ */
+
+:root {
+  /* Paper */
+  --paper: #fafaf7;          /* warm off-white, like washi */
+  --paper-cool: #f7f7f5;
+  --ink: #181818;
+  --ink-soft: #3a3a3a;
+  --ink-muted: #6e6e68;
+  --ink-faint: #a8a89f;
+  --rule: #d8d6cf;
+  --rule-soft: #e8e6df;
+
+  /* Accents (one per variation) */
+  --shoji-line: #1c1c1c;
+  --sumi-ink: #1a1a1a;
+  --koban-red: oklch(0.55 0.16 25);     /* hanko vermillion, restrained */
+  --ma-gray: #4a4a44;
+  --genko-blue: oklch(0.42 0.08 250);   /* document blue */
+
+  /* A4 dimensions at 96 dpi: 794 × 1123 */
+  --a4-w: 794px;
+  --a4-h: 1123px;
+
+  /* Type scale */
+  --t-xs: 9.5px;
+  --t-sm: 10.5px;
+  --t-base: 11.5px;
+  --t-md: 12.5px;
+  --t-lg: 14.5px;
+  --t-xl: 18px;
+  --t-2xl: 24px;
+  --t-3xl: 34px;
+  --t-display: 48px;
+}
+
+/* ---------- Reusable atoms ---------- */
+
+.r-page {
+  width: var(--a4-w);
+  height: var(--a4-h);
+  background: var(--paper);
+  color: var(--ink);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-feature-settings: "ss01", "kern", "liga";
+}
+
+.r-rule {
+  height: 1px;
+  background: var(--rule);
+  border: 0;
+  margin: 0;
+}
+.r-rule--ink { background: var(--ink); height: 1px; }
+.r-rule--thick { height: 2px; background: var(--ink); }
+
+/* Tight, label-style caps */
+.r-eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+/* Bullet that isn't a bullet */
+.r-tick::before {
+  content: "—";
+  color: var(--ink-faint);
+  margin-right: 0.6em;
+}
+
+/* Hanko-style stamp (used selectively) */
+.r-hanko {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 4px;
+  background: var(--koban-red);
+  color: var(--paper);
+  font-family: "Noto Serif JP", "Source Serif 4", serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transform: rotate(-2deg);
+}
+
+/* Genko-style cell grid (for one variation) */
+.r-genko-grid {
+  background-image:
+    linear-gradient(to right, var(--rule-soft) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--rule-soft) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Print */
+@media print {
+  @page { size: A4; margin: 0; }
+  body { background: white; }
+  .r-page { box-shadow: none !important; }
+}

@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>James Bai · CV</title>
+    <script>
+      (function () {
+        var base = "/resume";
+        var path = window.location.pathname + window.location.search + window.location.hash;
+        sessionStorage.setItem("resume.redirect", path);
+        window.location.replace(base + "/");
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

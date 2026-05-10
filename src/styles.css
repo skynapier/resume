@@ -1,0 +1,167 @@
+html,
+body {
+  margin: 0;
+  background: #ecebe5;
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 48px 24px 80px;
+}
+
+.r-page {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.toolbar {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+}
+
+.toolbar a,
+.toolbar button,
+.case-study-link {
+  background: #181818;
+  color: #fafaf7;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: 0.04em;
+}
+
+.toolbar a:hover,
+.toolbar button:hover,
+.case-study-link:hover {
+  background: oklch(0.55 0.16 25);
+}
+
+.case-study-link {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+}
+
+.case-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 64px 24px;
+  color: var(--ink);
+}
+
+.case-shell {
+  max-width: 920px;
+  margin: 0 auto;
+  border-top: 1px solid var(--ink);
+  padding-top: 24px;
+}
+
+.case-kicker,
+.case-shell h2 {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  color: var(--koban-red);
+}
+
+.case-kicker {
+  font-size: 11px;
+}
+
+.case-shell h1 {
+  margin: 12px 0 16px;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.case-lede {
+  max-width: 720px;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+  border-top: 1px solid var(--rule);
+  padding-top: 24px;
+}
+
+.case-shell h2 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.case-shell p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+@media (max-width: 760px) {
+  .stage {
+    align-items: flex-start;
+    overflow-x: auto;
+  }
+
+  .toolbar {
+    position: static;
+    padding: 12px;
+    background: #ecebe5;
+  }
+
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: white;
+  }
+
+  .stage {
+    gap: 0;
+    padding: 0;
+  }
+
+  .toolbar,
+  .case-study-link {
+    display: none;
+  }
+
+  .r-page {
+    box-shadow: none !important;
+    page-break-after: always;
+  }
+
+  .r-page:last-child {
+    page-break-after: auto;
+  }
+}

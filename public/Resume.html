@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>James Bai — Resume Explorations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/tokens.css" />
+  <style>
+    body { margin: 0; background: #f1efe9; font-family: "Inter", system-ui, sans-serif; }
+    /* shared shadow on artboards */
+    .r-page { box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 12px 28px rgba(0,0,0,.08); }
+    /* artboard frame uses canvas-default */
+  </style>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- canvas + variations -->
+  <script type="text/babel" src="design-canvas.jsx"></script>
+  <script type="text/babel" src="variations/01-shoji-page1.jsx"></script>
+  <script type="text/babel" src="variations/01-shoji-page2.jsx"></script>
+  <script type="text/babel" src="variations/02-sumi.jsx"></script>
+  <script type="text/babel" src="variations/03-koban.jsx"></script>
+  <script type="text/babel" src="variations/04-ma.jsx"></script>
+  <script type="text/babel" src="variations/05-genko.jsx"></script>
+
+  <script type="text/babel" data-presets="env,react">
+    const { DesignCanvas, DCSection, DCArtboard } = window;
+
+    function App() {
+      return (
+        <DesignCanvas title="James Bai · Resume — 5 Directions" subtitle="Japanese-restraint base · A4 · 2 pages each">
+          <DCSection id="shoji" title="01 · Shoji" subtitle="Strict grid · Helvetica · pure B/W · thin lines as shōji screens">
+            <DCArtboard id="shoji-1" label="Page 1" width={794} height={1123}>
+              <ShojiResume />
+            </DCArtboard>
+            <DCArtboard id="shoji-2" label="Page 2" width={794} height={1123}>
+              <ShojiResumePage2 />
+            </DCArtboard>
+          </DCSection>
+
+          <DCSection id="sumi" title="02 · Sumi (墨)" subtitle="Editorial serif · italic display · enso accent · generous whitespace">
+            <DCArtboard id="sumi-1" label="Page 1" width={794} height={1123}>
+              <SumiResume page={1} />
+            </DCArtboard>
+            <DCArtboard id="sumi-2" label="Page 2" width={794} height={1123}>
+              <SumiResume page={2} />
+            </DCArtboard>
+          </DCSection>
+
+          <DCSection id="koban" title="03 · Kōban (交番)" subtitle="Sans + Mono · hanko vermillion accent · code-document feel">
+            <DCArtboard id="koban-1" label="Page 1" width={794} height={1123}>
+              <KobanResume page={1} />
+            </DCArtboard>
+            <DCArtboard id="koban-2" label="Page 2" width={794} height={1123}>
+              <KobanResume page={2} />
+            </DCArtboard>
+          </DCSection>
+
+          <DCSection id="ma" title="04 · Ma (間)" subtitle="Extreme whitespace · serif name · timeline rail · quietest direction">
+            <DCArtboard id="ma-1" label="Page 1" width={794} height={1123}>
+              <MaResume page={1} />
+            </DCArtboard>
+            <DCArtboard id="ma-2" label="Page 2" width={794} height={1123}>
+              <MaResume page={2} />
+            </DCArtboard>
+          </DCSection>
+
+          <DCSection id="genko" title="05 · Genkō (原稿)" subtitle="Manuscript document · numbered sections · tabular numerics · engineer-document">
+            <DCArtboard id="genko-1" label="Page 1" width={794} height={1123}>
+              <GenkoResume page={1} />
+            </DCArtboard>
+            <DCArtboard id="genko-2" label="Page 2" width={794} height={1123}>
+              <GenkoResume page={2} />
+            </DCArtboard>
+          </DCSection>
+        </DesignCanvas>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
