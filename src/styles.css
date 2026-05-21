@@ -78,6 +78,42 @@ a {
   font-size: 11px;
 }
 
+.claude-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 10, 0.82);
+  cursor: zoom-out;
+}
+
+.claude-lightbox img {
+  display: block;
+  max-width: min(92vw, 1120px);
+  max-height: 92vh;
+  object-fit: contain;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  cursor: default;
+}
+
+.claude-lightbox-close {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #fafaf7;
+  color: #181818;
+  cursor: pointer;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 18px;
+  line-height: 1;
+}
+
 .case-page {
   min-height: 100vh;
   box-sizing: border-box;
@@ -192,6 +228,10 @@ a {
 }
 
 @media (max-width: 760px) {
+  .claude-lightbox {
+    display: none;
+  }
+
   .desktop-resume,
   .desktop-print-action {
     display: none;
@@ -455,6 +495,16 @@ a {
   html,
   body {
     background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
   }
 
   .stage {

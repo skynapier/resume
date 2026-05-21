@@ -4,11 +4,14 @@
    Title: Engineer (real) · Objective: Senior IC, AU
    ========================================================== */
 
+import { useState } from "react";
+
 type KobanResumeProps = {
   page?: 1 | 2;
 };
 
 export function KobanResume({ page = 1 }: KobanResumeProps) {
+  const [isClaudeOpen, setIsClaudeOpen] = useState(false);
   const RED = "oklch(0.55 0.16 25)";
   const S = {
     page: {
@@ -25,6 +28,19 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
     h2: { fontSize: "17px", fontWeight: 800, margin: 0 },
     meta: { fontSize: "10.5px", color: "var(--ink-muted)" },
     monoLabel: { fontFamily: '"JetBrains Mono", monospace', fontSize: "10.5px", fontWeight: 700, color: "var(--ink)", letterSpacing: "0.04em" },
+    claudeTerm: {
+      appearance: "none" as const,
+      border: 0,
+      padding: 0,
+      background: "transparent",
+      color: RED,
+      cursor: "pointer",
+      font: "inherit",
+      fontWeight: 700,
+      textDecoration: "underline",
+      textDecorationThickness: 1,
+      textUnderlineOffset: 2,
+    },
   };
 
   if (page === 1) {
@@ -36,7 +52,16 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
             <div style={{ ...S.mono, fontSize: 11, color: RED, letterSpacing: "0.04em" }}>// curriculum-vitae.md</div>
             <h1 style={{ ...S.h1, marginTop: 12 }}>James Bai</h1>
             <div style={{ ...S.mono, marginTop: 14, fontSize: 14, color: "var(--ink)", fontWeight: 600 }}>
-              <b style={{color:"var(--ink)"}}>Engineer @ Xero</b> · 5+ yrs · .NET · AWS · React · <b style={{color:RED}}>LLM firefighter</b>
+              <b style={{color:"var(--ink)"}}>Engineer @ Xero</b> · 5+ yrs · .NET · AWS · React ·{" "}
+              <button
+                type="button"
+                className="claude-term"
+                style={S.claudeTerm}
+                onClick={() => setIsClaudeOpen(true)}
+                aria-label="Open Claude easter egg"
+              >
+                LLM firefighter
+              </button>
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 12 }}>
@@ -64,18 +89,18 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
         {/* Summary as code-comment */}
         <div style={{ ...S.mono, marginTop: 14, fontSize: 11.5, lineHeight: 1.55, color: "var(--ink-soft)", whiteSpace: "pre-wrap" }}>
 {`/**
- * Software engineer with 5+ years shipping production .NET and AWS systems,
- * currently at Xero on the App Store billing platform. Comfortable owning
- * features end to end: design, delivery, and post launch quality.
+ * Software engineer with 5+ years shipping production .NET and AWS systems, currently at Xero
+ * on the App Store billing platform. Comfortable owning features end to end: design, delivery,
+ * and post launch quality.
  *
- * Self styled "LLM firefighter": pragmatic, AI native, and the person
- * who shows up when an LLM touched system is on fire. Claude Code and
- * Codex are part of my daily workflow. My side project is a ~250,000
- * line AI powered ERP (web + mobile) I built and operate alone, the
- * artifact of how I work in 2026.
+ * Self styled "LLM firefighter": in an AI assisted era, my value is not typing code fastest.
+ * It is reading systems clearly, setting up the right context and guardrails for AI, steering
+ * direction, judging whether the output is correct, and manually fixing what AI gets wrong.
+ * Claude Code and Codex are part of my daily workflow. My side project is a ~457,000 line
+ * AI powered ERP (web + mobile) I built and operate alone, with ~10 daily users in production.
+ * The artifact of how I work in 2026.
  *
  * @objective  Seeking senior software engineering roles
- * @location   Wellington, NZ. Open to relocation within Australasia.
  */`}
         </div>
 
@@ -146,6 +171,30 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
             </div>
           </div>
         </div>
+
+        {isClaudeOpen ? (
+          <div
+            className="claude-lightbox"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Claude easter egg"
+            onClick={() => setIsClaudeOpen(false)}
+          >
+            <button
+              type="button"
+              className="claude-lightbox-close"
+              aria-label="Close Claude easter egg"
+              onClick={() => setIsClaudeOpen(false)}
+            >
+              x
+            </button>
+            <img
+              src={`${import.meta.env.BASE_URL}BYDH/claude.png`}
+              alt="Claude easter egg"
+              onClick={(event) => event.stopPropagation()}
+            />
+          </div>
+        ) : null}
       </div>
     );
   }
@@ -160,12 +209,12 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
       <div style={{ height: 1, background: "var(--ink)", marginTop: 12 }} />
 
       {/* Side projects */}
-      <div style={{ ...S.sec, marginTop: 20 }}>## side-projects</div>
+      <div style={{ ...S.sec, marginTop: 16 }}>## side-projects</div>
 
       <div style={{ display: "grid", gridTemplateColumns: "1.45fr 1fr", columnGap: 22 }}>
         <div>
           <h2 style={{ ...S.h2, fontSize: 16 }}>BYDH ERP · AI powered, solo build</h2>
-          <div style={{ ...S.mono, fontSize: 12, fontWeight: 700, color: RED, marginTop: 4 }}>~250,000 LOC · operating · 1 maintainer</div>
+          <div style={{ ...S.mono, fontSize: 12, fontWeight: 700, color: RED, marginTop: 4 }}>~457,000 LOC · ~10 daily users · 1 maintainer</div>
           <div style={{ marginTop: 10, fontSize: 11.5, lineHeight: 1.65 }}>
             A custom ERP for a construction business. <b>Designed, built, and operated end to end</b> as an AI native system. Web + native mobile.
           </div>
@@ -200,7 +249,7 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
       </div>
 
       {/* successhealth */}
-      <div style={{ marginTop: 16, paddingTop: 14, borderTop: "1px solid var(--rule)" }}>
+      <div style={{ marginTop: 12, paddingTop: 10, borderTop: "1px solid var(--rule)" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
           <h2 style={{ ...S.h2, fontSize: 15 }}>Success Health · booking platform</h2>
           <div style={{ ...S.mono, fontSize: 11, color: "var(--ink-muted)" }}>successhealth.co.nz · live</div>
@@ -210,7 +259,23 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
         </div>
       </div>
 
-      <div style={{ ...S.sec, marginTop: 22 }}>## skills</div>
+      <div style={{ ...S.sec, marginTop: 16 }}>## ml-vision</div>
+      <div style={{ fontSize: 11.5, lineHeight: 1.65 }}>
+        <div style={{ marginBottom: 5 }}>
+          <a href="https://github.com/skynapier/pixel-style-transfer" target="_blank" rel="noreferrer" style={{ ...S.monoLabel, color: RED, textDecoration: "none" }}>pixel-style-transfer</a>
+          &nbsp; Neural style transfer in <b>PyTorch</b>: Gatys + AdaIN + Johnson, VGG-19 features, pixel-art grid-preservation loss, ControlNet baseline.
+        </div>
+        <div style={{ marginBottom: 5 }}>
+          <a href="https://github.com/skynapier/cv-self-training-counter" target="_blank" rel="noreferrer" style={{ ...S.monoLabel, color: RED, textDecoration: "none" }}>cv-self-training-counter</a>
+          &nbsp; CV auto-label (Dual-Otsu + SimpleBlobDetector) → Label Studio → <b>YOLOv8s</b> self-training loop → CoreML export.
+        </div>
+        <div>
+          <a href="https://github.com/skynapier/receipt-ocr" target="_blank" rel="noreferrer" style={{ ...S.monoLabel, color: RED, textDecoration: "none" }}>receipt-ocr</a>
+          &nbsp; <b>Florence-2</b> VLM + <b>PaddleOCR</b> with line-grouping algorithm and AWS Lambda container deploy plan.
+        </div>
+      </div>
+
+      <div style={{ ...S.sec, marginTop: 16 }}>## skills</div>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", columnGap: 22, fontSize: 11.5, lineHeight: 1.7 }}>
         <div>
           <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>lang</span> C# / .NET · TypeScript · Python</div>
@@ -227,7 +292,7 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
         </div>
       </div>
 
-      <div style={{ ...S.sec, marginTop: 20 }}>## education + cert</div>
+      <div style={{ ...S.sec, marginTop: 16 }}>## education + cert</div>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", columnGap: 22, rowGap: 8, fontSize: 11.5 }}>
         <div>
           <div style={{ fontWeight: 600 }}>PGDipSci (Merit), Computer Science</div>
