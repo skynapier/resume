@@ -16,7 +16,7 @@ const xeroItems: MobileItem[] = [
   {
     label: "ai/mcp-team",
     red: true,
-    body: "Selected to Xero's AI tooling team owning the official AI surface, including the Xero MCP server.",
+    body: "Selected to Xero's AI/MCP team owning the official AI surface, including the Xero MCP server. Building applied AI infrastructure across LLM tool use, agent workflows, retrieval/context design, eval checks, observability, privacy, and safety guardrails.",
   },
   {
     label: "plan-migration",
@@ -51,12 +51,12 @@ const projectItems: MobileItem[] = [
   {
     label: "email-ledger",
     red: true,
-    body: "Gemini parses inbound bills, classifies them, and creates payable or receivable records. Settlement auto-creates the payment entry.",
+    body: "Gemini parses inbound bills, classifies them, and creates payable or receivable records. Review screens validate source rows before save; settlement auto-creates the payment entry.",
   },
   {
     label: "ai-quoting",
     red: true,
-    body: "MCP lets quoting be driven from ChatGPT, replacing the team's Xero + Monday usage for that workflow.",
+    body: "MCP lets ChatGPT drive quoting via tool calls, structured context, pricing lookup, preview, and controlled save flow.",
   },
   {
     label: "mobile",
@@ -128,8 +128,8 @@ export function MobileResume() {
           billing platform. Comfortable owning features end to end: design, delivery, and post launch quality.
         </p>
         <p>
-          AI native and pragmatic. Claude Code and Codex are part of my daily workflow. My side project is a ~250,000
-          line AI powered ERP I built and operate alone.
+          AI native and pragmatic. My current Xero team owns AI/MCP product infrastructure. Claude Code and Codex are
+          part of my daily workflow. My side project is a ~450,000 line AI powered ERP I built and operate alone.
         </p>
       </MobileSection>
 
@@ -155,14 +155,32 @@ export function MobileResume() {
 
       <MobileSection title="## side-projects">
         <h3>BYDH ERP · AI powered, solo build</h3>
-        <p className="m-stack">~250,000 LOC · operating · 1 maintainer</p>
+        <p className="m-stack">~450,000 LOC · operating · 1 maintainer</p>
         <p>
           Custom ERP for a construction business. Designed, built, and operated end to end as an AI native system. Web +
           native mobile.
         </p>
         <MobileList items={projectItems} />
-        <h3>Success Health · booking platform</h3>
-        <p>Built and operate the website and online booking system for a Wellington physio.</p>
+        <h3>Live web products</h3>
+        <p className="m-stack">React · Tailwind · C# · AWS</p>
+        <h3>Success Health</h3>
+        <p>
+          Built and operate clinic booking and customer-facing flows for a Wellington physio. successhealth.co.nz.
+        </p>
+        <h3>AHU Handyman</h3>
+        <p>
+          Public site for an Australian handyman business, focused on service discovery, lead capture, and simple
+          production deployment.{" "}
+          <a
+            href="https://ahuhandyman.com.au"
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            ahuhandyman.com.au
+          </a>
+          .
+        </p>
       </MobileSection>
 
       <MobileSection title="## education + skills">
@@ -194,7 +212,7 @@ export function MobileResume() {
             <span>cloud</span>AWS Lambda · SQS · SNS · DynamoDB · Glue · ECS · S3 · RDS · Cognito · CloudFront · Azure
           </p>
           <p>
-            <span>ai</span>Claude Code · Codex · Gemini · MCP
+            <span>ai</span>Claude Code · Codex · Gemini · MCP · LLM tool use · agents · RAG/context · evals
           </p>
         </div>
       </MobileSection>

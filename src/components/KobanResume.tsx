@@ -87,20 +87,17 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
         <div style={{ height: 1, background: "var(--ink)", marginTop: 22 }} />
 
         {/* Summary as code-comment */}
-        <div style={{ ...S.mono, marginTop: 14, fontSize: 11.5, lineHeight: 1.55, color: "var(--ink-soft)", whiteSpace: "pre-wrap" }}>
+        <div style={{ ...S.mono, marginTop: 14, fontSize: 11.5, lineHeight: 1.55, color: "var(--ink-soft)", whiteSpace: "pre" }}>
 {`/**
- * Software engineer with 5+ years shipping production .NET and AWS systems, currently at Xero
- * on the App Store billing platform. Comfortable owning features end to end: design, delivery,
- * and post launch quality.
+ * Software engineer with 5+ years shipping .NET and AWS systems at Xero, currently on
+ * App Store billing and AI/MCP product infrastructure.
  *
- * Self styled "LLM firefighter": in an AI assisted era, my value is not typing code fastest.
- * It is reading systems clearly, setting up the right context and guardrails for AI, steering
- * direction, judging whether the output is correct, and manually fixing what AI gets wrong.
- * Claude Code and Codex are part of my daily workflow. My side project is a ~457,000 line
- * AI powered ERP (web + mobile) I built and operate alone, with ~10 daily users in production.
- * The artifact of how I work in 2026.
+ * I use AI heavily, but my value is knowing where to point it, how to verify the result,
+ * and how to repair the system when it gets things wrong.
+ * Claude Code and Codex are daily tools. My side project is a ~457,000 line AI powered
+ * ERP I built and operate alone, with ~10 daily users.
  *
- * @objective  Seeking senior software engineering roles
+ * @objective  Senior software engineering roles
  */`}
         </div>
 
@@ -122,7 +119,7 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
               </div>
               <div style={{ display: "flex", gap: 12, marginBottom: 6 }}>
                 <span style={{ ...S.monoLabel, minWidth: 100, color: RED }}>ai/mcp-team</span>
-                <span>Selected to a new team owning Xero's official <b>AI tooling surface</b>, including the <b>Xero MCP server</b> (.NET, Apr 2026 to present).</span>
+                <span>Selected to a new team owning Xero's official <b>AI/MCP surface</b>, including the <b>Xero MCP server</b>. Building applied AI infrastructure across <b>LLM tool use</b>, agent workflows, retrieval/context design, eval checks, observability, privacy, and safety guardrails.</span>
               </div>
               <div style={{ display: "flex", gap: 12, marginBottom: 6 }}>
                 <span style={{ ...S.monoLabel, minWidth: 100 }}>plan-migration</span>
@@ -219,8 +216,8 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
             A custom ERP for a construction business. <b>Designed, built, and operated end to end</b> as an AI native system. Web + native mobile.
           </div>
           <div style={{ marginTop: 10, fontSize: 10.5, lineHeight: 1.65 }}>
-            <div style={{ marginBottom: 5 }}><span style={{ ...S.monoLabel, color: RED }}>email→ledger</span> &nbsp; <b>Gemini</b> parses inbound bills, classifies, and creates payable/receivable records. Settlement <b>auto-creates the payment entry</b>, replacing manual admin work.</div>
-            <div style={{ marginBottom: 5 }}><span style={{ ...S.monoLabel, color: RED }}>ai-quoting</span> &nbsp; Wired the system to <b>MCP</b> so quoting can be driven from <b>ChatGPT</b>, replacing the team's Xero + Monday usage.</div>
+            <div style={{ marginBottom: 5 }}><span style={{ ...S.monoLabel, color: RED }}>email→ledger</span> &nbsp; <b>Gemini</b> parses inbound bills, classifies, and creates payable/receivable records. Review screens validate source rows before save; settlement <b>auto-creates the payment entry</b>.</div>
+            <div style={{ marginBottom: 5 }}><span style={{ ...S.monoLabel, color: RED }}>ai-quoting</span> &nbsp; Wired the system to <b>MCP</b> so <b>ChatGPT</b> can drive quoting via tool calls, structured context, pricing lookup, preview, and controlled save flow.</div>
             <div style={{ marginBottom: 5 }}><span style={{ ...S.monoLabel, color: RED }}>insights</span> &nbsp; Cashflow, P&L, project profitability dashboards.</div>
             <div><span style={{ ...S.monoLabel, color: RED }}>mobile</span> &nbsp; <b>React Native + Expo</b> app for on site field use; shares auth + <b>AWS Cognito</b> with the web app.</div>
           </div>
@@ -248,14 +245,34 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
         </div>
       </div>
 
-      {/* successhealth */}
+      {/* live web products */}
       <div style={{ marginTop: 12, paddingTop: 10, borderTop: "1px solid var(--rule)" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-          <h2 style={{ ...S.h2, fontSize: 15 }}>Success Health · booking platform</h2>
-          <div style={{ ...S.mono, fontSize: 11, color: "var(--ink-muted)" }}>successhealth.co.nz · live</div>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 7 }}>
+          <h2 style={{ ...S.h2, fontSize: 14 }}>Selected live web products</h2>
+          <div style={{ ...S.mono, fontSize: 10.5, color: "var(--ink-muted)" }}>React · Tailwind · C# · AWS</div>
         </div>
-        <div style={{ marginTop: 6, fontSize: 11.5, lineHeight: 1.6, color: "var(--ink-soft)" }}>
-          <b>Built and operate</b> the website and online booking system for a Wellington physio. <b>React, Tailwind, C#, AWS</b> (CloudFront, RDS, Lambda). Live and serving real clients in production.
+        <div style={{ display: "grid", gridTemplateColumns: "145px 1fr", columnGap: 12, rowGap: 6, fontSize: 11.2, lineHeight: 1.5, color: "var(--ink-soft)" }}>
+          <div>
+            <div style={{ ...S.monoLabel, color: RED }}>Success Health</div>
+            <div style={{ ...S.mono, fontSize: 9.5, color: "var(--ink-muted)", marginTop: 1 }}>successhealth.co.nz</div>
+          </div>
+          <div>
+            <b>Built and operate</b> clinic booking and customer-facing flows for a Wellington physio.
+          </div>
+          <div>
+            <div style={{ ...S.monoLabel, color: RED }}>AHU Handyman</div>
+            <a
+              href="https://ahuhandyman.com.au"
+              target="_blank"
+              rel="noreferrer"
+              style={{ ...S.mono, fontSize: 9.5, color: "var(--ink-muted)", marginTop: 1, display: "block", textDecoration: "none" }}
+            >
+              ahuhandyman.com.au
+            </a>
+          </div>
+          <div>
+            Public site for an Australian handyman business, focused on service discovery, lead capture, and simple production deployment.
+          </div>
         </div>
       </div>
 
@@ -288,7 +305,7 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
           <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>cloud</span> AWS (Lambda, SQS, SNS, DynamoDB, Glue, ECS, S3, RDS, <b>Cognito</b>, CloudFront) · Azure</div>
           <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>platform</span> K8s · Docker · Terraform · CloudFormation</div>
           <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>ci/cd</span> GitHub Actions · TeamCity · Jenkins</div>
-          <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>ai</span> Claude Code · Codex · Gemini · MCP (author + user)</div>
+          <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>ai</span> Claude Code · Codex · Gemini · MCP · LLM tool use · agents · RAG/context · evals</div>
         </div>
       </div>
 

@@ -78,7 +78,7 @@ export function BydhPage() {
             </div>
             <div>
               <h2>status</h2>
-              <p>Operating system. ~250,000 LOC. One maintainer.</p>
+              <p>Operating system. ~450,000 LOC. One maintainer.</p>
             </div>
           </div>
         </section>

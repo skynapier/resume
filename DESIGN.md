@@ -18,7 +18,7 @@ Single source of truth for the Kōban résumé. Read this before changing anythi
 3. **No em-dashes in body copy.** Year ranges only. Everywhere else use `:`, `,`, `.`, or `·`. Em-dashes are an AI-writing tell.
 4. **No prompt-injection / hidden text.** Honesty is the policy.
 5. **2 desktop pages, A4 (794 × 1123 px @ 96dpi).** Mobile uses a separate single-column reading component.
-6. **Quantified claims must be true.** ~250,000 LOC · 270 of 350 apps · 66k records/year · 1 minor bug in 1 month live · hundreds of thousands of dollars recovered. Don't round these up.
+6. **Quantified claims must be true.** ~450,000 LOC · 270 of 350 apps · 66k records/year · 1 minor bug in 1 month live · hundreds of thousands of dollars recovered. Don't round these up.
 7. **Hanko stamp** is the only decorative element. Keep it small (44px), top-right, rotated -2°.
 
 ## Tokens
@@ -51,7 +51,7 @@ Desktop body 11.5px / 1.55. Mobile body 16px / 1.62. Desktop mono labels 10.5px.
 - `## side-projects`
 - **BYDH ERP** as the hero: RED-tagged bullets (`email→ledger`, `ai-quoting`, `insights`, `mobile`).
 - Screenshot links to `/bydh`.
-- **Success Health** as a smaller second project below.
+- **Selected live web products** as smaller project rows below: Success Health and AHU Handyman stay separate.
 - `## skills`: two-column mono-labeled layout.
 - `## education + cert`: PGDipSci, BSc, AWS Dev Assoc (2026), RHCSA, Azure Dev Assoc.
 
