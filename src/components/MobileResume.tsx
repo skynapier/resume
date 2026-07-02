@@ -6,24 +6,32 @@ type MobileItem = {
   red?: boolean;
 };
 
-const xeroItems: MobileItem[] = [
+const xeroAiItems: MobileItem[] = [
   {
-    label: "sentinel/p0",
+    label: "ai/current",
+    red: true,
+    body: "Selected to Xero's AI/MCP team owning the official AI surface, including the Xero MCP server. Day-to-day work covers AI platform integration, LLM tool use, agent workflows, retrieval/context design, eval checks, observability, privacy, and safety guardrails.",
+  },
+  {
+    label: "office-flow",
     red: true,
     body:
-      "Feature lead on two App Store usage-based billing rewrite features. Shipped .NET / C# APIs, Postgres schema, billing core, and AWS Glue aggregation pipeline. Live ~1 month, only one minor bug found.",
+      "Feature lead on Microsoft Office support for Word, Excel, and PowerPoint, letting Xero data flow straight into Office files as structured content so users no longer copy/reformat numbers from Xero or build charts manually.",
+  },
+];
+
+const xeroFinanceItems: MobileItem[] = [
+  {
+    label: "billing-core",
+    body:
+      "Feature lead on major parts of the App Store usage-based billing rewrite. Shipped .NET / C# APIs, Postgres schema, billing core, and AWS Glue aggregation pipeline. Went live with one minor post-launch bug.",
   },
   {
-    label: "ai/mcp-team",
-    red: true,
-    body: "Selected to Xero's AI/MCP team owning the official AI surface, including the Xero MCP server. Building applied AI infrastructure across LLM tool use, agent workflows, retrieval/context design, eval checks, observability, privacy, and safety guardrails.",
-  },
-  {
-    label: "plan-migration",
+    label: "merchant-spa",
     body: "Co-designed and shipped React / Refine / MUI SPA backed by a .NET BFF for App Store merchant self-service.",
   },
   {
-    label: "manual-invoicing",
+    label: "invoice-recovery",
     body: "Feature lead on the manual-invoicing flow that recovered hundreds of thousands of dollars in overdue invoices.",
   },
   {
@@ -49,9 +57,9 @@ const section6Items: MobileItem[] = [
 
 const projectItems: MobileItem[] = [
   {
-    label: "email-ledger",
+    label: "bill-parser",
     red: true,
-    body: "Gemini parses inbound bills, classifies them, and creates payable or receivable records. Review screens validate source rows before save; settlement auto-creates the payment entry.",
+    body: "Gemini parses inbound bills, classifies them, and drafts payable or receivable records. Review screens validate source rows before save; settlement auto-creates the payment entry.",
   },
   {
     label: "ai-quoting",
@@ -124,12 +132,13 @@ export function MobileResume() {
 
       <MobileSection title="## profile">
         <p>
-          Software engineer with 5+ years shipping production .NET and AWS systems, currently at Xero on the App Store
-          billing platform. Comfortable owning features end to end: design, delivery, and post launch quality.
+          Software engineer with 5+ years shipping production .NET and AWS systems, currently at Xero on AI/MCP and
+          Microsoft Office data-flow work. Comfortable owning features end to end: design, delivery, and post launch
+          quality.
         </p>
         <p>
-          AI native and pragmatic. My current Xero team owns AI/MCP product infrastructure. Claude Code and Codex are
-          part of my daily workflow. My side project is a ~450,000 line AI powered ERP I built and operate alone.
+          AI native and pragmatic. My previous Xero work covered App Store billing, merchant self-service, invoice
+          recovery, and tax support. My side project is a ~450,000 line AI powered ERP I built and operate alone.
         </p>
       </MobileSection>
 
@@ -139,9 +148,13 @@ export function MobileResume() {
           <span>2023.11 — present</span>
         </div>
         <div className="m-stack">
-          C# / .NET 8/10 · AWS Lambda · SQS · SNS · DynamoDB · AWS Glue · React / TypeScript · Postgres
+          C# / .NET 8/10 · Node.js · Python · AWS Lambda · SQS · SNS · DynamoDB · AWS Glue · React / TypeScript ·
+          Postgres · MCP
         </div>
-        <MobileList items={xeroItems} />
+        <h3>Current: AI / MCP / RAG</h3>
+        <MobileList items={xeroAiItems} />
+        <h3>Previous: billing / finance systems</h3>
+        <MobileList items={xeroFinanceItems} />
       </MobileSection>
 
       <MobileSection title="## section6">

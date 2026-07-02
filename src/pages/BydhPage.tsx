@@ -50,9 +50,12 @@ export function BydhPage() {
           <h1>BYDH ERP</h1>
           <p className="case-lede">
             AI powered ERP for construction operations. Built and operated solo:
-            web, mobile, quoting, ledger automation, dashboards, and AWS
+            web, mobile, quoting, bill automation, dashboards, and AWS
             infrastructure.
           </p>
+          <figure className="case-hero-shot">
+            <img src={`${imageBase}index.png`} alt="BYDH ERP dashboard overview" />
+          </figure>
           <div className="case-grid">
             <div>
               <h2>scope</h2>
@@ -72,8 +75,8 @@ export function BydhPage() {
             <div>
               <h2>ai surface</h2>
               <p>
-                GPT assists quoting. Gemini parses inbound bills into ledger
-                records. MCP enables quoting workflows from ChatGPT.
+                GPT assists quoting. Gemini parses inbound bills into draft
+                accounting records. MCP enables quoting workflows from ChatGPT.
               </p>
             </div>
             <div>
