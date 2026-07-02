@@ -5,8 +5,6 @@ dist/
 .idea/
 *.log
 uploads/
-CLAUDE.md
-AGENTS.md
 .local-coder/
 .codex/
 .cover-letter/
