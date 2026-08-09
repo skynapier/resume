@@ -89,8 +89,8 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
         {/* Summary as code-comment */}
         <div style={{ ...S.mono, marginTop: 10, fontSize: 10.8, lineHeight: 1.35, color: "var(--ink-soft)", whiteSpace: "pre" }}>
 {`/**
- * Software engineer with 5+ years shipping .NET and AWS systems at Xero, now leading AI/MCP
- * and Microsoft Office data-flow work after App Store billing systems.
+ * Software engineer with 5+ years shipping .NET and AWS systems at Xero, now owning zero-to-one
+ * MCP research and Microsoft Office integration work after App Store billing systems.
  *
  * I use AI heavily, but my value is knowing where to point it, how to verify the result, and how
  * to repair the system when it gets things wrong. Claude Code and Codex are daily tools.
@@ -118,12 +118,12 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
                 <span style={{ color: "var(--ink-soft)" }}>AI / MCP / RAG</span>
               </div>
               <div style={{ display: "flex", gap: 10, marginBottom: 6 }}>
-                <span style={{ ...S.monoLabel, minWidth: 90, color: RED }}>ai/current</span>
-                <span>Selected to the team owning Xero's official <b>AI/MCP surface</b>, including the <b>Xero MCP server</b>. Day-to-day work covers AI platform integration, <b>LLM tool use</b>, agent workflows, retrieval/context design, eval checks, observability, privacy, and safety guardrails.</span>
+                <span style={{ ...S.monoLabel, minWidth: 90, color: RED }}>mcp/0-to-1</span>
+                <span>Selected to Xero's official <b>AI/MCP team</b>. Owned zero-to-one research for <b>Microsoft Office add-in support</b>: mapped architecture-wide impact, produced the feasibility plan, and built a working prototype for structured Xero data in Word, Excel, and PowerPoint.</span>
               </div>
               <div style={{ display: "flex", gap: 10, marginBottom: 8 }}>
-                <span style={{ ...S.monoLabel, minWidth: 90, color: RED }}>office-flow</span>
-                <span><b>Feature lead</b> on Microsoft Office support for <b>Word, Excel, and PowerPoint</b>, letting Xero data flow straight into Office files as structured content so users no longer copy/reformat numbers from Xero or build charts manually.</span>
+                <span style={{ ...S.monoLabel, minWidth: 90, color: RED }}>mcp/debug</span>
+                <span>Investigated intermittent <b>MCP timeouts</b> with no known cause, traced behaviour across service boundaries, reconstructed the end-to-end request path, and identified the underlying failure mechanism.</span>
               </div>
 
               <div style={{ ...S.monoLabel, display: "flex", alignItems: "center", gap: 8, marginTop: 8, marginBottom: 7 }}>

@@ -8,15 +8,15 @@ type MobileItem = {
 
 const xeroAiItems: MobileItem[] = [
   {
-    label: "ai/current",
+    label: "mcp/0-to-1",
     red: true,
-    body: "Selected to Xero's AI/MCP team owning the official AI surface, including the Xero MCP server. Day-to-day work covers AI platform integration, LLM tool use, agent workflows, retrieval/context design, eval checks, observability, privacy, and safety guardrails.",
+    body: "Selected to Xero's official AI/MCP team. Owned zero-to-one research for Microsoft Office add-in support: mapped architecture-wide impact, produced the feasibility plan, and built a working prototype for structured Xero data in Word, Excel, and PowerPoint.",
   },
   {
-    label: "office-flow",
+    label: "mcp/debug",
     red: true,
     body:
-      "Feature lead on Microsoft Office support for Word, Excel, and PowerPoint, letting Xero data flow straight into Office files as structured content so users no longer copy/reformat numbers from Xero or build charts manually.",
+      "Investigated intermittent MCP timeouts with no known cause, traced behaviour across service boundaries, reconstructed the end-to-end request path, and identified the underlying failure mechanism.",
   },
 ];
 
@@ -132,9 +132,9 @@ export function MobileResume() {
 
       <MobileSection title="## profile">
         <p>
-          Software engineer with 5+ years shipping production .NET and AWS systems, currently at Xero on AI/MCP and
-          Microsoft Office data-flow work. Comfortable owning features end to end: design, delivery, and post launch
-          quality.
+          Software engineer with 5+ years shipping production .NET and AWS systems, currently at Xero on zero-to-one
+          MCP research and Microsoft Office integration work. Comfortable owning features end to end: design, delivery,
+          and post launch quality.
         </p>
         <p>
           AI native and pragmatic. My previous Xero work covered App Store billing, merchant self-service, invoice
