@@ -52,7 +52,7 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
             <div style={{ ...S.mono, fontSize: 11, color: RED, letterSpacing: "0.04em" }}>// curriculum-vitae.md</div>
             <h1 style={{ ...S.h1, marginTop: 12 }}>James Bai</h1>
             <div style={{ ...S.mono, marginTop: 14, fontSize: 14, color: "var(--ink)", fontWeight: 600 }}>
-              <b style={{color:"var(--ink)"}}>Engineer @ Xero</b> · 5+ yrs · .NET · AWS · React ·{" "}
+              Software Engineer | AI Platforms, MCP &amp;{" "}
               <button
                 type="button"
                 className="claude-term"
@@ -60,7 +60,7 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
                 onClick={() => setIsClaudeOpen(true)}
                 aria-label="Open Claude easter egg"
               >
-                LLM firefighter
+                LLM Integrations
               </button>
             </div>
           </div>
@@ -89,14 +89,13 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
         {/* Summary as code-comment */}
         <div style={{ ...S.mono, marginTop: 10, fontSize: 10.8, lineHeight: 1.35, color: "var(--ink-soft)", whiteSpace: "pre" }}>
 {`/**
- * Software engineer with 5+ years shipping .NET and AWS systems at Xero, now owning zero-to-one
- * MCP research and Microsoft Office integration work after App Store billing systems.
+ * Engineer at Xero with 5+ years building production systems in .NET and AWS. My current work spans
+ * MCP architecture, accounting tools for AI assistants, and traffic analysis across the platform.
  *
- * I use AI heavily, but my value is knowing where to point it, how to verify the result, and how
- * to repair the system when it gets things wrong. Claude Code and Codex are daily tools.
- * My side project is a ~457,000 line AI powered ERP I built and operate alone, with ~10 daily users.
+ * I write technical proposals, lead team design discussions, and turn decisions into scoped tickets.
+ * I review AI-generated code and analyse telemetry to inform tenant rate limits and data access.
  *
- * @objective  Senior software engineering roles
+ * @objective  Senior AI engineering roles in Australia
  */`}
         </div>
 
@@ -118,12 +117,20 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
                 <span style={{ color: "var(--ink-soft)" }}>AI / MCP / RAG</span>
               </div>
               <div style={{ display: "flex", gap: 10, marginBottom: 6 }}>
-                <span style={{ ...S.monoLabel, minWidth: 90, color: RED }}>mcp/0-to-1</span>
-                <span>Selected to Xero's official <b>AI/MCP team</b>. Owned zero-to-one research for <b>Microsoft Office add-in support</b>: mapped architecture-wide impact, produced the feasibility plan, and built a working prototype for structured Xero data in Word, Excel, and PowerPoint.</span>
+                <span style={{ ...S.monoLabel, minWidth: 90, color: RED }}>mcp/v2</span>
+                <span>Shaped architecture decisions for Xero's production MCP v1-to-v2 migration, including Python <b>dependency injection</b>, a cross-platform <b>reverse proxy</b>, and <b>canary smoke-test design</b>. Ported existing tools to v2.</span>
+              </div>
+              <div style={{ display: "flex", gap: 10, marginBottom: 6 }}>
+                <span style={{ ...S.monoLabel, minWidth: 90, color: RED }}>mcp/tools</span>
+                <span>Implemented and shipped new MCP tools that enable AI assistants to access <b>structured accounting data and workflows</b> for Xero business customers.</span>
+              </div>
+              <div style={{ display: "flex", gap: 10, marginBottom: 6 }}>
+                <span style={{ ...S.monoLabel, minWidth: 90, color: RED }}>mcp/traffic</span>
+                <span>Built reusable analysis skills and tools comparing <b>sampled edge telemetry, full request logs, and AI platform analytics</b>. Analysed timing, recurring patterns, and client signals to identify likely automated migration traffic. Evidence informed tenant-level rate-limit and data-access decisions.</span>
               </div>
               <div style={{ display: "flex", gap: 10, marginBottom: 8 }}>
-                <span style={{ ...S.monoLabel, minWidth: 90, color: RED }}>mcp/debug</span>
-                <span>Investigated intermittent <b>MCP timeouts</b> with no known cause, traced behaviour across service boundaries, reconstructed the end-to-end request path, and identified the underlying failure mechanism.</span>
+                <span style={{ ...S.monoLabel, minWidth: 90, color: RED }}>mcp/research</span>
+                <span>Owned the Microsoft Office add-in feasibility study and prototype for structured Xero data. Traced intermittent MCP timeouts across services to their root cause.</span>
               </div>
 
               <div style={{ ...S.monoLabel, display: "flex", alignItems: "center", gap: 8, marginTop: 8, marginBottom: 7 }}>
@@ -133,7 +140,7 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
               </div>
               <div style={{ display: "flex", gap: 10, marginBottom: 6 }}>
                 <span style={{ ...S.monoLabel, minWidth: 90 }}>billing-core</span>
-                <span><b>Feature lead</b> on major parts of the global <b>App Store usage-based billing</b> rewrite. Designed and shipped the <b>.NET / C#</b> APIs and Postgres schema that became the <b>billing core</b>. Also built the <b>AWS Glue</b> aggregation pipeline. <b style={{color:RED}}>Went live with one minor post-launch bug.</b></span>
+                <span><b>Feature lead</b> on core work for the global <b>App Store usage-based billing</b> rewrite. Shipped <b>.NET / C#</b> APIs, Postgres schema and <b>AWS Glue</b> aggregation. <b style={{color:RED}}>One minor post-launch bug.</b></span>
               </div>
               <div style={{ display: "flex", gap: 10, marginBottom: 6 }}>
                 <span style={{ ...S.monoLabel, minWidth: 90 }}>merchant-spa</span>
@@ -177,7 +184,7 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
               </div>
               <div style={{ display: "flex", gap: 12 }}>
                 <span style={{ ...S.monoLabel, minWidth: 100 }}>also</span>
-                <span>Multi-client consulting across banking, telco, and SaaS · CI/CD on TeamCity & GitHub Actions · code review and junior mentoring.</span>
+                <span>Banking · telco · SaaS · TeamCity & GitHub Actions CI/CD · code review · junior mentoring.</span>
               </div>
             </div>
           </div>
@@ -224,11 +231,12 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
       <section style={{ borderTop: "1px solid var(--rule)", padding: "12px 0 6px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 16 }}>
           <div>
-            <h2 style={{ ...S.h2, fontSize: 16 }}>BYDH ERP · AI powered, solo build</h2>
-            <div style={{ ...S.mono, fontSize: 12, fontWeight: 700, color: RED, marginTop: 4 }}>~457,000 LOC · ~10 daily users · 1 maintainer</div>
+            <h2 style={{ ...S.h2, fontSize: 16 }}>BYDH ERP · Construction operations and finance</h2>
+            <div style={{ ...S.mono, fontSize: 12, fontWeight: 700, color: RED, marginTop: 4 }}>10+ daily users · 3 years as sole engineer</div>
           </div>
           <div style={{ ...S.mono, fontSize: 9.2, color: "var(--ink-muted)", textAlign: "right", lineHeight: 1.45 }}>
             react · ts · .net · aws · postgres<br />
+            <a href="https://bydh.co.nz/" target="_blank" rel="noreferrer" style={{ color: "var(--ink-muted)", textDecoration: "none" }}>bydh.co.nz</a><br />
             <span style={{ color: RED }}>case study at /bydh</span>
           </div>
         </div>
@@ -236,7 +244,7 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 280px", columnGap: 18, marginTop: 10, alignItems: "start" }}>
           <div>
             <div style={{ fontSize: 11.4, lineHeight: 1.55 }}>
-              A custom ERP for a construction business. <b>Designed, built, and operated end to end</b> as an AI native system across web and native mobile.
+              Built and operate a web and native Swift iOS construction ERP serving the business owner, field workers, and administrators. Covers quoting and invoicing, accounts payable and receivable, financial reporting, and field operations.
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "112px 1fr", columnGap: 10, rowGap: 5, marginTop: 10, fontSize: 10.8, lineHeight: 1.45 }}>
               <span style={{ ...S.monoLabel, color: RED }}>bill-parser</span>
@@ -246,7 +254,7 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
               <span style={{ ...S.monoLabel, color: RED }}>insights</span>
               <span>Cashflow, P&L, and project profitability dashboards.</span>
               <span style={{ ...S.monoLabel, color: RED }}>mobile</span>
-              <span><b>React Native + Expo</b> for site use, sharing auth and <b>AWS Cognito</b> with web.</span>
+              <span><b>Native iOS (Swift)</b> for site use, sharing auth and <b>AWS Cognito</b> with web.</span>
             </div>
           </div>
           <a href="/resume/bydh" style={{ border: `1px solid ${RED}`, textDecoration: "none", background: "#fafaf7", height: 128, display: "block", overflow: "hidden" }}>
@@ -290,7 +298,7 @@ export function KobanResume({ page = 1 }: KobanResumeProps) {
         <div>
           <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>lang</span> C# / .NET · TypeScript · Python</div>
           <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>web</span> React · Redux · Next · MUI · Fluent · Next UI</div>
-          <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>mobile</span> React Native · Expo</div>
+          <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>mobile</span> React Native · Expo · Swift</div>
           <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>data</span> Postgres · MySQL · DynamoDB · Dapper · EF · Flyway</div>
           <div><span style={{ ...S.monoLabel, color: RED, minWidth: 80, display: "inline-block" }}>msg</span> SQS · SNS</div>
         </div>

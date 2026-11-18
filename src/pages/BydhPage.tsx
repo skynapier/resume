@@ -49,9 +49,12 @@ export function BydhPage() {
           <div className="case-kicker">// case-study.md</div>
           <h1>BYDH ERP</h1>
           <p className="case-lede">
-            AI powered ERP for construction operations. Built and operated solo:
-            web, mobile, quoting, bill automation, dashboards, and AWS
-            infrastructure.
+            Construction ERP built and operated solo. Used by the business owner,
+            field workers, and administrators. Public site{" "}
+            <a href="https://bydh.co.nz/" target="_blank" rel="noreferrer">
+              bydh.co.nz
+            </a>
+            .
           </p>
           <figure className="case-hero-shot">
             <img src={`${imageBase}index.png`} alt="BYDH ERP dashboard overview" />
@@ -60,28 +63,32 @@ export function BydhPage() {
             <div>
               <h2>scope</h2>
               <p>
-                Custom workflow platform replacing manual admin work across
-                quoting, payable and receivable records, settlement, project
-                insight, and field operations.
+                Quoting to invoicing, accounts payable and receivable, financial
+                reporting, and field operations.
               </p>
             </div>
             <div>
               <h2>stack</h2>
               <p>
-                React · TypeScript · .NET · AWS · PostgreSQL · React Native ·
-                Expo · Cognito · MCP · Gemini
+                React · TypeScript · .NET · AWS · PostgreSQL · Swift · Cognito ·
+                MCP · Gemini
               </p>
             </div>
             <div>
               <h2>ai surface</h2>
               <p>
                 GPT assists quoting. Gemini parses inbound bills into draft
-                accounting records. MCP enables quoting workflows from ChatGPT.
+                accounting records for human review before controlled save. MCP
+                enables quoting workflows from ChatGPT including price lookup,
+                preview, and controlled save.
               </p>
             </div>
             <div>
               <h2>status</h2>
-              <p>Operating system. ~450,000 LOC. One maintainer.</p>
+              <p>
+                Live production system with 10+ daily users. 3 years as sole
+                engineer.
+              </p>
             </div>
           </div>
         </section>

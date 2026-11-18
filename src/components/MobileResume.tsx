@@ -8,15 +8,28 @@ type MobileItem = {
 
 const xeroAiItems: MobileItem[] = [
   {
-    label: "mcp/0-to-1",
-    red: true,
-    body: "Selected to Xero's official AI/MCP team. Owned zero-to-one research for Microsoft Office add-in support: mapped architecture-wide impact, produced the feasibility plan, and built a working prototype for structured Xero data in Word, Excel, and PowerPoint.",
-  },
-  {
-    label: "mcp/debug",
+    label: "mcp/v2",
     red: true,
     body:
-      "Investigated intermittent MCP timeouts with no known cause, traced behaviour across service boundaries, reconstructed the end-to-end request path, and identified the underlying failure mechanism.",
+      "Shaped architecture decisions for Xero's production MCP v1-to-v2 migration, including Python dependency injection, a cross-platform reverse proxy, and canary smoke-test design. Ported existing tools to v2.",
+  },
+  {
+    label: "mcp/tools",
+    red: true,
+    body:
+      "Implemented and shipped new MCP tools that enable AI assistants to access structured accounting data and workflows for Xero business customers.",
+  },
+  {
+    label: "mcp/traffic",
+    red: true,
+    body:
+      "Built reusable analysis skills and tools that compared sampled edge telemetry, full request logs, and AI platform analytics. Analysed timing, recurring patterns, and client signals to identify likely automated migration traffic. Evidence informed tenant-level rate-limit and data-access decisions.",
+  },
+  {
+    label: "mcp/research",
+    red: true,
+    body:
+      "Owned Microsoft Office add-in feasibility and a prototype for structured Xero data. Tracked intermittent MCP timeouts to their root cause across services.",
   },
 ];
 
@@ -69,7 +82,7 @@ const projectItems: MobileItem[] = [
   {
     label: "mobile",
     red: true,
-    body: "React Native + Expo app for on site field use, sharing auth and AWS Cognito with the web app.",
+    body: "Native iOS app in Swift for field use, sharing auth and AWS Cognito with the web app.",
   },
 ];
 
@@ -118,7 +131,7 @@ export function MobileResume() {
           <div className="m-kicker">// curriculum-vitae.md</div>
           <h1>James Bai</h1>
           <p className="m-tagline">
-            Engineer @ Xero · 5+ yrs · .NET · AWS · React · <strong>LLM firefighter</strong>
+            Software Engineer | AI Platforms, MCP & <strong>LLM Integrations</strong>
           </p>
         </div>
         <Hanko />
@@ -132,13 +145,13 @@ export function MobileResume() {
 
       <MobileSection title="## profile">
         <p>
-          Software engineer with 5+ years shipping production .NET and AWS systems, currently at Xero on zero-to-one
-          MCP research and Microsoft Office integration work. Comfortable owning features end to end: design, delivery,
-          and post launch quality.
+          Software engineer with 5+ years shipping production .NET and AWS systems, currently at Xero on AI/MCP work.
+          Comfortable owning features end to end: design, delivery, and post launch quality.
         </p>
         <p>
-          AI native and pragmatic. My previous Xero work covered App Store billing, merchant self-service, invoice
-          recovery, and tax support. My side project is a ~450,000 line AI powered ERP I built and operate alone.
+          I write technical proposals, lead team design discussions, turn decisions into implementation tickets, and
+          review AI-generated code. My previous Xero work covered App Store billing, merchant self-service, invoice
+          recovery, and tax support. Seeking senior AI engineering roles in Australia.
         </p>
       </MobileSection>
 
@@ -167,11 +180,20 @@ export function MobileResume() {
       </MobileSection>
 
       <MobileSection title="## side-projects">
-        <h3>BYDH ERP · AI powered, solo build</h3>
-        <p className="m-stack">~450,000 LOC · operating · 1 maintainer</p>
+        <h3>BYDH ERP · Construction operations and finance</h3>
+        <p className="m-stack">10+ daily users · 3 years as sole engineer</p>
         <p>
-          Custom ERP for a construction business. Designed, built, and operated end to end as an AI native system. Web +
-          native mobile.
+          A production ERP for a construction business. I built and operate it solo. It serves the business owner,
+          field workers, and administrators, and covers quoting and invoicing, accounts payable and receivable, financial
+          reporting, and field operations.{" "}
+          <a
+            href="https://bydh.co.nz/"
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            bydh.co.nz
+          </a>
         </p>
         <MobileList items={projectItems} />
         <h3>Live web products</h3>
